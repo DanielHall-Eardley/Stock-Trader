@@ -1,0 +1,33 @@
+@mixin mediaQ($bp){
+  @if $bp == phone {
+    @media only screen and (max-width: 40.62em){
+      @content;
+    }
+  }
+
+  @if $bp == tablet {
+    @media only screen and (max-width: 56.25em){
+      @content;
+    }
+  }
+}
+
+@mixin button {
+  padding: .8rem $spacing;
+  border: $border-grey;
+  outline: none;
+  border-radius: $b-rad;
+  color: grey;
+  transition: all .2s;
+
+  &:hover{
+    background-color: $light-yellow;
+    transform: translateY(-.2rem);
+    box-shadow: 0 1rem 2rem rgba(grey, .3);
+  }
+
+  &:active{
+    transform: translateY(0);
+    box-shadow: 0 .4rem .8rem rgba(grey, .2);
+  }
+}
